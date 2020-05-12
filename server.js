@@ -1,6 +1,7 @@
 const express = require('express');  // express 라이브러리 import
 const hbs = require('hbs');  // hbs(handlebars) 라이브러리 import
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials')
