@@ -60,6 +60,6 @@ app.get('/bad', (req, res) => {  // bad page
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });  // 3000번 포트를 통해 사용자들이 접근 가능
