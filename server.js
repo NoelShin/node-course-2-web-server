@@ -1,12 +1,13 @@
 const express = require('express');  // express 라이브러리 import
 const hbs = require('hbs');  // hbs(handlebars) 라이브러리 import
 const fs = require('fs');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // localhost를 사용할 때는 셸 환경변수에 PORT가 없기 때문에 3000번을 매뉴얼하게 입력한다.
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine', 'hbs'); // 여기서 view engine은 왜 써야 하는 걸까?
 
+// 사용자의 로그 작성
 app.use((req, res, next) => {
   var now = new Date().toString();
   var log = `${now}: ${req.method} ${req.url}`;
